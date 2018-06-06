@@ -16,22 +16,29 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="Catalogue.html" routerLink="/catalogue">Catalogue</a></li>
-        <li><a href="MyCourses.html" routerLink="/user-courses">My courses</a></li>
+        <li><a routerLink="/catalogue">Catalogue</a></li>
+        <li><a routerLink="/user-courses">My courses</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="User.html" routerLink="/user-cpage">Profile</a></li>
-            <li><a href="MyCourses.html" routerLink="/user-courses">My courses</a></li>
-            <li><a href="UserChange.html" routerLink="/editingProfile">Settings</a></li>
+            <li><a routerLink="/user-page">Profile</a></li>
+            <li><a routerLink="/user-courses">My courses</a></li>
+            <li><a routerLink="/edit-user">Settings</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#" routerLink="/home">Sign out</a></li>
+            <li><a (click)="this.signOut.SignOut()">Sign out</a></li>
           </ul>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<h2>My Courses</h2>
+<ul >
+  <li *ngFor="let course of userCourses">
+ <!-- <a (click)="courseSelect(course.id)">{{course.name}} </a>-->
+  <button class="btn newAccount" (click)="courseSelect(course.coursId)">{{course.coursId}} {{course.name}}</button>
+  </li>
+</ul>
 </body>

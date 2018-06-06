@@ -15,12 +15,25 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="CatalogueOut.html" routerLink="/catalogue-out">Catalogue</a></li>
+        <li><a routerLink="/catalogueOut">Catalogue</a></li>
         <!-- <li><a href="#"></a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="Registration.html" routerLink="/registration">Sign In <i class="fas fa-user-plus"></i></a></li>
-        <li><a href="LogIn.html" routerLink="/login">Log In <i class="fas fa-user"></i></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <i class="fas fa-user-plus"></i><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/companyRegistration">As Company</a></li>
+            <li><a routerLink="/registration">As User</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In <i class="fas fa-user"></i><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/companyLogin">As Company</a></li>
+            <li><a routerLink="/login">As User</a></li>
+          </ul>
+        </li>
+
       </ul>
     </div>
   </div>
@@ -30,15 +43,15 @@
   <form>
     <div class="form-group">
       <label for="Email">Email address</label>
-      <input [(ngModel)]="email" type="email" class="form-control" id="Email" placeholder="Email">
+      <input [(ngModel)]="email" type="email" name = "em" class="form-control" id="Email" placeholder="Email">
     </div>
     <div class="form-group">
       <label for="Password">Password</label>
-      <input [(ngModel)]="password" type="password" class="form-control" id="Password" placeholder="Password">
+      <input [(ngModel)]="password" type="password" name = "pas" class="form-control" id="Password" placeholder="Password">
     </div>
     <span id="register">
-        <button type="submit" class="btn" id="register"><a href="User.html" routerLink="/user-page">Log In</a></button>
-        Don't have an account? Sign in <a href="Registration.html" routerLink="/registration" class="linked">here.</a>
+        <button type="submit" class="btn" id="register" (click)="loginUser()"><!--<a routerLink="/user-page"></a>-->Log In</button>
+        Don't have an account? Sign in <a routerLink="/registration" class="linked">here.</a>
       </span>
 
   </form>

@@ -40,16 +40,16 @@
 <div class="container" id="form">
   <form>
     <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input type="text" class="form-control" [(ngModel)]= "this.FirstName"  name = "angFName" id="firstName" placeholder="First Name">
+      <label for="firstName">First name</label>
+      <input type="text" class="form-control" [(ngModel)]= "this.firstName"  name = "angFName" id="firstName" placeholder="First name">
     </div>
     <div class="form-group">
-      <label for="secondName">Second Name</label>
-      <input type="text" class="form-control" [(ngModel)]= "this.SecondName" name = "angSName" id="secondName" placeholder="Second Name">
+      <label for="secondName">Second name</label>
+      <input type="text" class="form-control" [(ngModel)]= "this.secondName" name = "angSName" id="secondName" placeholder="Second name">
     </div>
     <div class="form-group">
-      <label for="Email">Email address</label>
-      <input type="email" class="form-control" [(ngModel)]= "this.Email" name = "angEmail" id="Email" placeholder="Email">
+      <label for="email">email address</label>
+      <input type="email" class="form-control" [(ngModel)]= "this.email" name = "angEmail" id="email" placeholder="email">
     </div>
     <div class="form-group">
       <label for="Password">Password</label>
@@ -88,12 +88,25 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="CatalogueOut.html" routerLink="/catalogue-out">Catalogue</a></li>
+        <li><a routerLink="/catalogueOut">Catalogue</a></li>
         <!-- <li><a href="#"></a></li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="Registration.html" routerLink="/registration">Sign In <i class="fas fa-user-plus"></i></a></li>
-        <li><a href="LogIn.html" routerLink="/login">Log In <i class="fas fa-user"></i></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In <i class="fas fa-user-plus"></i><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/companyRegistration">As Company</a></li>
+            <li><a routerLink="/registration">As User</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In <i class="fas fa-user"></i><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/companyLogin">As Company</a></li>
+            <li><a routerLink="/login">As User</a></li>
+          </ul>
+        </li>
+
       </ul>
     </div>
   </div>
@@ -104,32 +117,32 @@
   <form>
     <div class="form-group">
       <label for="firstName">First Name</label>
-      <input [(ngModel)]="FirstName" type="text" class="form-control" id="firstName" placeholder="First Name">
+      <input [(ngModel)]="FirstName" name = "1" type="text" class="form-control" id="firstName" placeholder="First Name">
     </div>
     <div class="form-group">
       <label for="secondName">Second Name</label>
-      <input [(ngModel)]="SecondName" type="text" class="form-control" id="secondName" placeholder="Second Name">
+      <input [(ngModel)]="SecondName" name = "2" type="text" class="form-control" id="secondName" placeholder="Second Name">
     </div>
     <div class="form-group">
       <label for="Email">Email address</label>
-      <input [(ngModel)]="Email" type="email" class="form-control" id="Email" placeholder="Email">
+      <input [(ngModel)]="Email" name = "3" type="email" class="form-control" id="Email" placeholder="Email">
     </div>
     <div class="form-group">
       <label for="Password">Password</label>
-      <input [(ngModel)]="Password" type="password" class="form-control" id="Password" placeholder="Password">
+      <input [(ngModel)]="Password" name = "4" type="password" class="form-control" id="Password" placeholder="Password">
     </div>
     <div class="form-group">
       <label for="confirmPassword">Password</label>
-      <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+      <input [(ngModel)]="ConfirmPassword" name = "5" type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
     </div>
     <div class="checkbox">
       <label>
-        <input [(ngModel)]="Updates" type="checkbox"> Do you you want to recive updates and reminders?
+        <input [(ngModel)]="Updates" name = "6" type="checkbox"> Do you you want to recive updates and reminders?
       </label>
     </div>
     <div id="register">
-      <button type="submit" class="btn newAccount" id="register" (click)="registerUser()"><a href="User.html"
-                                                                                             routerLink="/user-page">Create an account</a></button>
+      <button type="submit" class="btn newAccount" id="register" (click)="registerUser()"><!--<a routerLink="/login">Create an account</a>-->
+        Create an account</button>
     </div>
   </form>
 </div>

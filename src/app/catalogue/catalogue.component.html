@@ -10,27 +10,64 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" id="brand" href="Home.html" routerLink="/home">Code & Work</a>
+      <a class="navbar-brand" id="brand" routerLink="/home">Code & Work</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="Catalogue.html" routerLink="/catalogue">Catalogue</a></li>
-        <li><a href="MyCourses.html" routerLink="/user-courses">My courses</a></li>
+        <li><a routerLink="/catalogue">Catalogue</a></li>
+        <li><a routerLink="/user-courses">My courses</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="User.html" routerLink="/user-page">Profile</a></li>
-            <li><a href="MyCourses.html" routerLink="/user-courses">My courses</a></li>
-            <li><a href="UserChange.html" routerLink="/editingUser">Settings</a></li>
+            <li><a routerLink="/user-page">Profile</a></li>
+            <li><a routerLink="/user-courses">My courses</a></li>
+            <li><a  routerLink="/edit-user">Settings</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#" routerLink="/home">Sign out</a></li>
+            <li><a  (click)="this.signOut.SignOut()">Sign out</a></li>
           </ul>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<div class="container">
+  <ol class="courseList">
+    <li class="course JsJunior">
+      <a href="#">
+        <img src="https://stepik.org/media/cache/images/courses/2223/cover_CjHmdwG/086357ce75cc9410abf16f8d2f0e824a.png" alt="Logo">
+      </a>
+      <ol id="course1">
+        <li class="owner">
+          <a href="https://sigma.software/">Sigma Software</a>
+        </li>
+      </ol>
+      <a routerLink="/task">JavaScript. Junior developer</a>
+    <a (click)="this.addCourse()" >Enroll for a course</a>
+    </li>
+    <li class="course CppJunior">
+      <a href="#">
+        <img src="https://stepik.org/media/cache/images/courses/363/cover/c0e235513f7598d01f96ccc8a27c25a5.jpg" alt="Logo">
+      </a>
+      <ol id="course2">
+        <li class="owner">
+          <a href="https://www.nixsolutions.com/">Nix Solutions</a>
+        </li>
+      </ol>
+      <a routerLink="/task">C++. Junior developer</a>
+    <a (click)="this.addCourse('fd93e7c5-be47-4f15-8d51-ae5edaa152fe')" >Enroll for a course</a>
+    </li>
+  </ol>
+  <h2>My Courses</h2>
+  <ul >
+    <li>
+    <li *ngFor="let course of courses"> <!--(click)="courseSelect(course.id)"-->
+    <!--<a >{{course.name}}</a>
+    <a (click)="this.addCourse(course.id)" >Enroll for a course</a> -->
+    <button type="submit" class="btn newAccount" id="register" (click)="this.addCourse(course.id)">{{course.name}} - Enroll for a course</button>
+    </li>
+  </ul>
+</div>
 </body>

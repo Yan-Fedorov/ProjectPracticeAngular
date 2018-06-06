@@ -15,6 +15,50 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <!--<script src="jquery-3.3.1.js"></script>
+  <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+    function run() {
+      // Команда для компиляции на удаленном сервере
+      var cmd = "g++ -Wall main.cpp -o main_prog && echo 'Compilation: SUCCESS."
+        + " Program output is:\n' && ./main_prog && echo \"\nExit code: $?\"";
+
+      var output = $("#output");
+      output.text('');
+      var to_compile = {
+        "src": code.getValue(),
+        "cmd": cmd,
+      };
+
+      output.text("Executing... Please wait.");
+
+      $.ajax({
+        url: "http://coliru.stacked-crooked.com/compile",
+        type: "POST",
+        data: JSON.stringify(to_compile),
+        contentType:"text/plain; charset=utf-8",
+        dataType: "text"
+      }).done(function(data) {
+        output.text(data);
+      }).fail(function(data) {
+        output.text("Server error: " + data);
+      });
+    };
+  </script>
+  <script>
+    var code;
+    code = ace.edit("code");                      // создаем редактор из элемента с id="code"
+    code.setTheme("ace/theme/textmate");          // выбираем тему оформления для подсветки синтаксиса
+    code.getSession().setMode("ace/mode/c_cpp");  // говорим что код надо подсвечивать как C++ код
+    code.setShowPrintMargin(false);               // опционально: убираем вертикальную границу в 80 сиволов
+    code.setOptions({
+      maxLines: Infinity,                       // опционально: масштабировать редактор вертикально по размеру кода
+      fontSize: "12pt",                         // опционально: размер шрифта ставим побольше
+    });
+    code.$blockScrolling = Infinity;              // отключаем устаревшие, не поддерживаемые фишки редактора
+
+  </script>
+  -->
 </head>
 <body>
   <app-root></app-root>

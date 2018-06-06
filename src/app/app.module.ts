@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CompanyService } from './company.service';
 import { RegistrationComponent } from './registration/registration.component';
@@ -16,6 +16,13 @@ import { UserCoursesComponent } from './user-courses/user-courses.component';
 import { LoginComponent } from './login/login.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
 import { CatalogueOutComponent } from './catalogue-out/catalogue-out.component';
+import {AuthInterceptor} from './Interceptor/Interceptor';
+import {SignOut} from './SignOut';
+import { TaskComponent } from './task/task.component';
+import { UserCoursesService } from './user-courses.service';
+import { CourseService } from './course.service';
+import { CompanyLoginComponent } from './company-login/company-login.component';
+import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
 
 
 @NgModule({
@@ -29,6 +36,9 @@ import { CatalogueOutComponent } from './catalogue-out/catalogue-out.component';
     LoginComponent,
     CatalogueComponent,
     CatalogueOutComponent,
+    TaskComponent,
+    CompanyLoginComponent,
+    CompanyRegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +46,12 @@ import { CatalogueOutComponent } from './catalogue-out/catalogue-out.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [CompanyService, UserService, LocalStorageService],
+  providers: [CompanyService, UserService, SignOut, LocalStorageService, UserCoursesService, CourseService,
+  {
+  provide : HTTP_INTERCEPTORS,
+    useClass : AuthInterceptor,
+  multi : true,
+}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

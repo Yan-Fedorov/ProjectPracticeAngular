@@ -1,8 +1,9 @@
 import {Guid} from 'guid-typescript';
 
-export class Task{
-    public Id: Guid;
-    public  Info :string;
-public Points :number;
-public  Answers :string;
+export class Task {
+  public id: Guid;
+  public info: string;
+  public points: number;
+  public answers: string;
+  public name: string;
 }

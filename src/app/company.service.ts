@@ -3,37 +3,47 @@ import {Observable} from 'rxjs/Observable';
 import {Guid} from 'guid-typescript';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Company} from './CompanyField/Company';
+import {Course} from './CourseField/Course';
 
 @Injectable()
-export class CompanyService<T> {
+export class CompanyService {
 
   constructor(private http: HttpClient) {
   }
 
-  GetElements(): Observable<T[]> {
-    return this.http.get<T[]>('http://localhost:7505/api/company');
+  GetElements(): Observable<Company[]> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Auth': 'False'})
+    };
+    return this.http.get<Company[]>('http://localhost:7505/api/company', httpOptions);
   }
 
-  getCompany(id: Guid): Observable<Company> {
+  getItem(id: Guid): Observable<Company> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Auth': 'False'})
+    };
     return this.http.get<Company>
-    (`http://localhost:7505/api/company/${id}`);
+    (`http://localhost:7505/api/company/${id}`, httpOptions);
   }
 
-  updateCompany(id: Guid, company: Company): Observable<any> {
-    // const httpOptions = {
-    // };
-    return this.http.post(`http://localhost:7505/api/company/${id}`, company);
+  updateItem(id: Guid, item: Company): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Auth': 'True'})
+    };
+    return this.http.post(`http://localhost:7505/api/company/${id}`, item, httpOptions);
   }
 
-  addCompany(company: Company): Observable<Company> {
-    // const httpOptions = {
-    //  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    // };
-    return this.http.post<Company>('http://localhost:7505/api/company', company);
+  addItem(item: Company): Observable<Company> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Auth': 'False'})
+    };
+    return this.http.post<Company>(`http://localhost:7505/api/company`, item, httpOptions);
   }
 
-  deleteCompany(id: Guid): Observable<any> {
-    return this.http.delete<Company>(`http://localhost:7505/api/company/${id}`);
+  deleteItem(id: Guid): Observable<any> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Auth': 'True'})
+    };
+    return this.http.delete<Company>(`http://localhost:7505/api/company/${id}`, httpOptions);
   }
-
 }

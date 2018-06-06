@@ -20,11 +20,11 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="User.html" routerLink="/user-page">Profile</a></li>
-            <li><a href="MyCourses.html" routerLink="/user-courses">My courses</a></li>
-            <li><a href="UserChange.html" routerLink="/editing-user">Settings</a></li>
+            <li><a routerLink="/user-page">Profile</a></li>
+            <li><a routerLink="/user-courses">My courses</a></li>
+            <li><a routerLink="/edit-user">Settings</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="Home.html"  routerLink="/home" >Sign out</a></li>
+            <li><a (click)="this.signOut.SignOut()" >Sign out</a></li>
           </ul>
         </li>
       </ul>
@@ -33,34 +33,34 @@
 </nav>
 
 <div ng-app="codeWork" ng-controller="registration">
-  <form class="container form edit">
+  <form class="container form edit" *ngIf="editingUser">
     <div class="form-group">
       <label for="firstName">Edit First Name</label>
-      <input [(ngModel)]="editingUser.name" type="text" class="form-control" id="firstName" placeholder="First Name">
+      <input [(ngModel)]="firstName" name = "1" type="text" class="form-control" id="firstName" placeholder="First Name">
     </div>
     <div class="form-group">
       <label for="secondName">Edit Second Name</label>
-      <input [(ngModel)]="editingUser.name" type="text" class="form-control" id="secondName" placeholder="Second Name">
+      <input [(ngModel)]="secondName" name = "2" type="text" class="form-control" id="secondName" placeholder="Second Name">
     </div>
     <div class="form-group">
       <label for="Email">Edit Email address</label>
-      <input [(ngModel)]="editingUser.email" type="email" class="form-control" id="Email" placeholder="Email">
+      <input [(ngModel)]="email" name = "3" type="email" class="form-control" id="Email" placeholder="Email">
     </div>
     <div class="form-group">
       <p>Change password</p>
       <label for="Password">Old password</label>
-      <input [(ngModel)]="OldPassword" type="password" class="form-control" id="Password" placeholder="Password">
+      <input [(ngModel)]="OldPassword" name = "4" type="password" class="form-control" id="Password" placeholder="Password">
     </div>
     <div class="form-group">
       <label for="confirmPassword">New Password</label>
-      <input [(ngModel)]="editingUser.password" type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+      <input [(ngModel)]="NewPassword" name = "5" type="password" class="form-control" id="newPassword" placeholder="Confirm Password">
     </div>
     <div class="form-group">
       <label for="confirmPassword">Confirm new Password</label>
-      <input [(ngModel)]="ConfirmPassword" type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+      <input [(ngModel)]="confirmPassword" name = "6" type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
     </div>
     <div id="register">
-      <button type="submit" class="btn newAccount" id="register" (click)="editUserInfo()"><a href="User.html">Save changes</a></button>
+      <button type="submit" class="btn newAccount" id="register" (click)="editUserInfo()"><!--<a routerLink="/editingProfile">Save changes</a>-->Save changes</button>
     </div>
   </form>
 </div>

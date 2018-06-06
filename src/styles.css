@@ -1,1 +1,263 @@
 /* You can add global styles to this file, and also import other style files */
+body#user, body#catalogue {
+  font-family: 'Comfortaa', cursive;
+}
+
+nav.navbar.navbar-default {
+  font-family: 'Comfortaa', cursive;
+  background-color: #f8f8f8b5;
+  border-color: #f8f8f800;
+  border: 1px solid #abaaaa;
+  border-radius: 0;
+  z-index: 3;
+}
+
+.navbar-default .nav.navbar-nav>li>a, a>li {
+  color: #525252;
+}
+
+.menuItem a:hover {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.menuItem>ul {
+  width: 20%;
+  height: auto;
+}
+
+.menuItem li {
+  background-color: green;
+  color: white;
+}
+
+button.navbar-toggle.collapsed,
+.navbar-default button.navbar-toggle,
+.navbar-default button.navbar-toggle:focus {
+  background-color: #f8f8f8e0;
+  border: 1px solid #abaaaa;
+}
+
+.navbar-default .navbar-nav>.dropdown.open>a:focus,
+.navbar-default .navbar-nav>.dropdown.open>a:hover,
+.navbar-default .navbar-nav>.dropdown.open>a {
+  background-color: #f8f8f8e0;
+  font-weight: 700;
+
+}
+
+#brand.navbar-brand {
+  color: #525252;
+  font-weight: 400;
+  font-size: 23px;
+}
+
+#brand.navbar-brand:hover,
+.navbar-default .navbar-nav .dropdown.open .dropdown-menu>li>a:hover,
+.navbar-default .nav.navbar-nav>li>a:hover {
+  font-weight: 700;
+}
+
+.navbar-default .navbar-toggle:focus:hover {
+  background-color: #ddd;
+}
+
+
+.navbar-default.navbar-nav>.open>a,
+.navbar-default.navbar-nav>.open>a:focus,
+.navbar-default.navbar-nav>.open>a:hover {
+  background-color: #f8f8f8e0;
+}
+
+.dropdown ul.dropdown-menu{
+  text-align: right;
+}
+
+.userLogo {
+  display: inline-block;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+  background-color: purple;
+}
+
+.userInitials {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  margin: 17px auto;
+}
+
+div .userRating {
+  text-align: right;
+}
+
+.userRating {
+  display: inline;
+}
+
+hr.myHr {
+  border: 0;
+  height: 0.5px;
+  background: gray;
+  background-image: linear-gradient(to right, #ccc, #abaaaa, #ccc);
+}
+
+table.coursesItem {
+  display: inline-table;
+}
+
+.courseList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-left: 0px;
+  font-size: 1em;
+  margin-bottom: 1.25em;
+  line-height: 1.6;
+}
+
+.courseList ol {
+  list-style: none;
+  font-size: 1em;
+  margin-bottom: 1.25em;
+  line-height: 1.6;
+}
+
+.courseList>li>ol#course2, .courseList>li>ol#course1 {
+  padding-left: 0;
+}
+
+.courseList>li a:hover {
+  color: #337ab7;
+}
+
+.courseList>li a {
+  color: #abaaaa;
+}
+
+.courseList>li {
+  width: 30%;
+  position: relative;
+  text-align: center;
+  border: 1px solid #abaaaa;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.courseList>li:hover {
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.24), 0 5px 15px 0 rgba(0,0,0,0.19);
+}
+
+.courseList>li>a {
+  color: black;
+  font-weight: 700;
+  font-size: 1.3em;
+}
+
+.JsJunior>a>img {
+  width: 8em;
+  height: 8em;
+  margin: 5px;
+}
+
+.CppJunior>a>img {
+  width: 8em;
+  height: 8em;
+  margin: 5px;
+}
+
+.sidebar {
+  min-width: 23%;
+  max-width: 23%;
+  background-color: #222;
+  position: fixed;
+  top: 0;
+  /* left: -240px; */
+  margin-top: 51px;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #eee;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.sidebar>div>a {
+  color: #fafafa;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.sidebarHeader {
+  margin: 5px 5px 5px 0;
+  padding: 5px 5px 5px 0;
+  text-align: center;
+}
+
+.sidebarHeader p {
+  margin-top: 5px;
+  padding-left: 17px;
+  text-align: left;
+}
+
+nav>ul.nav-pills>li>a {
+  border-radius: 0;
+  color: #fafafa;
+  border-left: 2px solid #fafafa;
+}
+
+nav>ul.nav-pills>li>a:hover {
+  color: #222;
+  border-left: 2px solid #222;
+}
+
+.taskWrapper {
+  z-index: 1;
+  width: 77%;
+  margin-left: auto;
+}
+
+.top-tools {
+  border-bottom: 1px solid #D8D8D8;
+  padding: 1em 0;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.taskPlayer {
+  padding: 20px 4px 4px;
+}
+
+.taskPlayerHead>p{
+  padding: 0 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.notifications {
+  background-color: #cedadeab;
+  border: 1px solid #abaaaa;
+  padding: 10px;
+  margin: 30px 0;
+  border-radius: 4px;
+}
+
+.news {
+  border-bottom: 1px solid #abaaaa;
+  padding-top: inherit;
+  padding-bottom: 5px;
+}
+
+.moreInfo {
+  display: none;
+}
+
+.notifyLink:active .moreInfo {
+  display: block;
+}
