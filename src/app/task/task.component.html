@@ -1,0 +1,137 @@
+
+<body id="user">
+<nav class="navbar navbar-default">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="brand" routerLink="/user-page">Code & Work</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/user-page" >Profile</a></li>
+            <li><a routerLink="/user-courses" >My courses</a></li>
+            <li><a routerLink="/edit-user" >Settings</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a (click)="this.signOut.SignOut()">Sign out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- СПИСОК ЗАДАНИЙ -->
+
+<div class="sidebar">
+  <div class="sidebarHeader">
+    <a>{{course.name}}</a>
+    <div class="sidebarProgressWrap">
+      <p>Course progress</p>
+      <span class="progressBar"></span>
+    </div>
+  </div>
+  <div class="sidebarContent">
+    <nav>
+      <ul class="nav nav-pills nav-stacked">
+        <li>
+        <li *ngFor="let task of tasks" >
+        <button type="submit" class="btn newAccount" id="register" (click)="this.StartTask(task)">{{task.name}}</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- КОНЕЦ СПИСКА ЗАДАНИЙ -->
+
+<div class="taskWrapper">
+  <div class="top-tools">
+    <div class="taskNumber">Task</div>
+  </div>
+  <div class="taskPlayer">
+    <div class="taskPlayerHead">
+      <p>{{this.currentTask.info}}</p>
+    </div>
+  </div>
+</div>
+</body>
+-->
+<!--
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css" media="screen">
+			#code {
+				 width: 100%;
+				 float:left;
+				 min-height:100px;
+				 overflow: hidden;
+
+			 }
+		</style>
+		<script src="jquery-3.3.1.js"></script>
+		<script src="ace.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			function run() {
+				// Команда для компиляции на удаленном сервере
+				var cmd = "g++ -Wall main.cpp -o main_prog && echo 'Compilation: SUCCESS."
+					+ " Program output is:\n' && ./main_prog && echo \"\nExit code: $?\"";
+
+				var output = $("#output");
+				output.text('');
+				var to_compile = {
+					"src": code.getValue(),
+					"cmd": cmd,
+				};
+
+				output.text("Executing... Please wait.");
+
+				$.ajax({
+					url: "http://coliru.stacked-crooked.com/compile",
+					type: "POST",
+					data: JSON.stringify(to_compile),
+					contentType:"text/plain; charset=utf-8",
+					dataType: "text"
+				}).done(function(data) {
+					output.text(data);
+				}).fail(function(data) {
+					output.text("Server error: " + data);
+				});
+			};
+		</script>
+</head>
+	<body>
+		<div id="code">#include &lt;iostream&gt;
+int main()
+
+      &#123;
+	std::cout << "main function\n";
+      &#123;
+		</div>
+    <script>
+      var code;
+      code = ace.edit("code");                      // создаем редактор из элемента с id="code"
+      code.setTheme("ace/theme/textmate");          // выбираем тему оформления для подсветки синтаксиса
+      code.getSession().setMode("ace/mode/c_cpp");  // говорим что код надо подсвечивать как C++ код
+      code.setShowPrintMargin(false);               // опционально: убираем вертикальную границу в 80 сиволов
+      code.setOptions({
+        maxLines: Infinity,                       // опционально: масштабировать редактор вертикально по размеру кода
+        fontSize: "12pt",                         // опционально: размер шрифта ставим побольше
+      });
+      code.$blockScrolling = Infinity;              // отключаем устаревшие, не поддерживаемые фишки редактора
+    </script>
+		<button id="run" onclick='run();'>Run</button>
+
+<p>Output:</p><pre id="output">{{'}'}}</pre>
+	</body>
+</html>
+-->
