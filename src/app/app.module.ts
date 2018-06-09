@@ -23,7 +23,11 @@ import { UserCoursesService } from './user-courses.service';
 import { CourseService } from './course.service';
 import { CompanyLoginComponent } from './company-login/company-login.component';
 import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
-
+import { CompanyPageComponent } from './company-page/company-page.component';
+import { EditCourseComponent } from './edit-course/edit-course.component';
+import { AceEditorModule } from 'ng2-ace-editor';
+import { AddCourseComponent } from './add-course/add-course.component';
+import { UserNotificationComponent } from './user-notification/user-notification.component';
 
 @NgModule({
   declarations: [
@@ -39,12 +43,17 @@ import { CompanyRegistrationComponent } from './company-registration/company-reg
     TaskComponent,
     CompanyLoginComponent,
     CompanyRegistrationComponent,
+    CompanyPageComponent,
+    EditCourseComponent,
+    AddCourseComponent,
+    UserNotificationComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AceEditorModule
   ],
   providers: [CompanyService, UserService, SignOut, LocalStorageService, UserCoursesService, CourseService,
   {

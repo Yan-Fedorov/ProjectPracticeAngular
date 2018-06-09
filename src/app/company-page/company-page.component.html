@@ -9,22 +9,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" id="brand" href="Home.html" routerLink="/home">Code & Work</a>
+      <a class="navbar-brand" id="brand" routerLink="/home">Code & Work</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="Catalogue.html" routerLink="/catalogue">Catalogue</a></li>
-        <li><a href="MyCourses.html" routerLink="/user-courses">My courses</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">User<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Company<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="User.html" routerLink="/user-page">Profile</a></li>
-            <li><a href="MyCourses.html" routerLink="/user-courses">My courses</a></li>
-            <li><a routerLink="/user-notification">My notifications</a></li>
-            <li><a href="UserChange.html" routerLink="/edit-user">Settings</a></li>
+            <li><a  routerLink="/company-page">Profile</a></li>
             <li role="separator" class="divider"></li>
             <li><a (click)="this.signOut.SignOut()">Sign out</a></li>
           </ul>
@@ -44,35 +39,26 @@
 <div class="container">
     <span class="menuItem">
       <ul class="list-group">
-        <a href="User.html" routerLink="/user-page">
+        <a  routerLink="/company-page">
           <li class="list-group-item">
             Profile
           </li>
         </a>
-        <a href="MyCourses.html" routerLink="/user-courses">
+        <a  routerLink="/add-course">
           <li class="list-group-item">
-            My courses
-          </li>
-        </a>
-        <a href="UserChange.html" routerLink="/edit-user">
-          <li class="list-group-item">
-            Settings
+            Add new Course
           </li>
         </a>
       </ul>
     </span>
 
   <table class="table table-striped coursesItem">
-    <tr>
-      <td>Company</td>
-      <td>Course</td>
-    </tr>
-    <tr>
-
-    </tr>
-    <tr>
-
-    </tr>
+    <ul >
+      <li *ngFor="let course of courses">
+        <!-- <a (click)="courseSelect(course.id)">{{course.name}} </a>-->
+        <button class="btn newAccount" (click)="selectCourse(course.id)">{{course.name}}</button>
+      </li>
+    </ul>
   </table>
 
 </div>

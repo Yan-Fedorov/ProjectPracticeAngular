@@ -37,7 +37,7 @@ export class CompanyLoginComponent implements OnInit {
 
   public loginRequest(): Observable<any> {
     const body = new URLSearchParams();
-    body.set('email', this.name);
+    body.set('name', this.name);
     body.set('password', this.password);
 
     const options = {

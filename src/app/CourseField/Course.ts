@@ -11,4 +11,12 @@ export class Course {
   public vacancy: string;
   public peopleLimit: number;
   public tasks: Array<Task>;
+
+  constructor(name: string, startTime: DateTimeFormat, endTime: DateTimeFormat, vacancy: string, peopleLimit: number) {
+    this.name = name;
+    this.vacancy = vacancy;
+    this.startTime = startTime;
+    this.endTime = endTime;
+    this.peopleLimit = peopleLimit;
+  }
 }

@@ -1,4 +1,4 @@
-
+<!--
 <body id="user">
 <nav class="navbar navbar-default">
   <div class="container">
@@ -30,7 +30,7 @@
 </nav>
 
 <!-- СПИСОК ЗАДАНИЙ -->
-
+<!--
 <div class="sidebar">
   <div class="sidebarHeader">
     <a>{{course.name}}</a>
@@ -52,7 +52,7 @@
 </div>
 
 <!-- КОНЕЦ СПИСКА ЗАДАНИЙ -->
-
+<!--
 <div class="taskWrapper">
   <div class="top-tools">
     <div class="taskNumber">Task</div>
@@ -64,9 +64,10 @@
   </div>
 </div>
 </body>
+&#123;
 -->
-<!--
-<!DOCTYPE html>
+
+<!--<!DOCTYPE html>
 <html>
 	<head>
 		<style type="text/css" media="screen">
@@ -78,60 +79,16 @@
 
 			 }
 		</style>
-		<script src="jquery-3.3.1.js"></script>
-		<script src="ace.js" type="text/javascript" charset="utf-8"></script>
-		<script>
-			function run() {
-				// Команда для компиляции на удаленном сервере
-				var cmd = "g++ -Wall main.cpp -o main_prog && echo 'Compilation: SUCCESS."
-					+ " Program output is:\n' && ./main_prog && echo \"\nExit code: $?\"";
-
-				var output = $("#output");
-				output.text('');
-				var to_compile = {
-					"src": code.getValue(),
-					"cmd": cmd,
-				};
-
-				output.text("Executing... Please wait.");
-
-				$.ajax({
-					url: "http://coliru.stacked-crooked.com/compile",
-					type: "POST",
-					data: JSON.stringify(to_compile),
-					contentType:"text/plain; charset=utf-8",
-					dataType: "text"
-				}).done(function(data) {
-					output.text(data);
-				}).fail(function(data) {
-					output.text("Server error: " + data);
-				});
-			};
-		</script>
 </head>
-	<body>
-		<div id="code">#include &lt;iostream&gt;
-int main()
+	<body>-->
+    <div ace-editor [(text)]="textCompile" style="min-height: 200px; width:100%; overflow: auto;"
+    [mode]="'javascript'">
+    </div>
+    <button (click)="sendItem(this.textCompile)">Compile</button>
 
-      &#123;
-	std::cout << "main function\n";
-      &#123;
-		</div>
-    <script>
-      var code;
-      code = ace.edit("code");                      // создаем редактор из элемента с id="code"
-      code.setTheme("ace/theme/textmate");          // выбираем тему оформления для подсветки синтаксиса
-      code.getSession().setMode("ace/mode/c_cpp");  // говорим что код надо подсвечивать как C++ код
-      code.setShowPrintMargin(false);               // опционально: убираем вертикальную границу в 80 сиволов
-      code.setOptions({
-        maxLines: Infinity,                       // опционально: масштабировать редактор вертикально по размеру кода
-        fontSize: "12pt",                         // опционально: размер шрифта ставим побольше
-      });
-      code.$blockScrolling = Infinity;              // отключаем устаревшие, не поддерживаемые фишки редактора
-    </script>
-		<button id="run" onclick='run();'>Run</button>
-
-<p>Output:</p><pre id="output">{{'}'}}</pre>
+    <p>Output:</p><pre id="output">{{'}'}}</pre>
+<!--
 	</body>
 </html>
 -->
+

@@ -1,0 +1,61 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" id="brand" routerLink="/home">Code & Work</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="MyCourses.html" routerLink="/company-page">My courses</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Company <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/company-page">Profile</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a (click)="this.signOut.SignOut()" >Sign out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div ng-app="codeWork" ng-controller="registration">
+  <form class="container form edit" >
+    <div class="form-group">
+      <label for="firstName">Add Name</label>
+      <input [(ngModel)]="nameOfCourse" name = "name" type="text" class="form-control" id="firstName" placeholder="First Name">
+    </div>
+    <div class="form-group">
+      <label for="secondName">Add End Time</label>
+      <input [(ngModel)]="endTime" name = "2" type="text" class="form-control" id="secondName" placeholder="Second Name">
+    </div>
+    <div class="form-group">
+      <label for="Email">Add People Limit</label>
+      <input [(ngModel)]="peopleLimit" name = "3" type="text" class="form-control" id="Email" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="Password">Add Start Time</label>
+      <input [(ngModel)]="startTime" name = "4" type="text" class="form-control" id="Password" placeholder="Start Time">
+    </div>
+    <div class="form-group">
+      <label for="Password">Add Vacancy</label>
+      <input [(ngModel)]="vacancy" name = "5" type="text" class="form-control" id="newPassword" placeholder="Vacancy">
+    </div>
+    <div id="register">
+      <button type="submit" class="btn newAccount" id="register" (click)="addCourseInfo()">Add course</button>
+    </div>
+    <div id="register">
+      <button type="submit" class="btn newAccount" id="register" (click)="addCourseToCompany()">Add course to company</button>
+    </div>
+  </form>
+</div>

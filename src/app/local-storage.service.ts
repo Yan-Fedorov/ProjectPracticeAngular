@@ -22,10 +22,10 @@ export class LocalStorageService {
     localStorage.setItem('id', id.toString());
   }
   public setLocalCourse(id: Guid): void {
-    localStorage.setItem('id', id.toString());
+    localStorage.setItem('idCourse', id.toString());
   }
   public getCourseId(): Guid {
-    const localStorageCourse = localStorage.getItem('id');
+    const localStorageCourse = localStorage.getItem('idCourse');
     return Guid.parse(localStorageCourse);
   }
   public ClearLocalStorage() {
