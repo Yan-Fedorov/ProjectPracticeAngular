@@ -1,4 +1,4 @@
-<!--
+
 <body id="user">
 <nav class="navbar navbar-default">
   <div class="container">
@@ -19,6 +19,7 @@
           <ul class="dropdown-menu">
             <li><a routerLink="/user-page" >Profile</a></li>
             <li><a routerLink="/user-courses" >My courses</a></li>
+            <li><a routerLink="/user-notification">My notifications</a></li>
             <li><a routerLink="/edit-user" >Settings</a></li>
             <li role="separator" class="divider"></li>
             <li><a (click)="this.signOut.SignOut()">Sign out</a></li>
@@ -30,7 +31,7 @@
 </nav>
 
 <!-- СПИСОК ЗАДАНИЙ -->
-<!--
+
 <div class="sidebar">
   <div class="sidebarHeader">
     <a>{{course.name}}</a>
@@ -52,7 +53,7 @@
 </div>
 
 <!-- КОНЕЦ СПИСКА ЗАДАНИЙ -->
-<!--
+
 <div class="taskWrapper">
   <div class="top-tools">
     <div class="taskNumber">Task</div>
@@ -62,33 +63,15 @@
       <p>{{this.currentTask.info}}</p>
     </div>
   </div>
+  <div ace-editor [(text)]="textCompile" style="min-height: 200px; width:100%; overflow: auto;"
+       [mode]="'javascript'">
+  </div>
+  <button (click)="compile(this.textCompile)">Compile</button>
 </div>
 </body>
-&#123;
--->
 
-<!--<!DOCTYPE html>
-<html>
-	<head>
-		<style type="text/css" media="screen">
-			#code {
-				 width: 100%;
-				 float:left;
-				 min-height:100px;
-				 overflow: hidden;
 
-			 }
-		</style>
-</head>
-	<body>-->
-    <div ace-editor [(text)]="textCompile" style="min-height: 200px; width:100%; overflow: auto;"
-    [mode]="'javascript'">
-    </div>
-    <button (click)="sendItem(this.textCompile)">Compile</button>
 
-    <p>Output:</p><pre id="output">{{'}'}}</pre>
-<!--
-	</body>
-</html>
--->
+
+
 

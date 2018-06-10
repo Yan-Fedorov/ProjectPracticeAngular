@@ -28,6 +28,9 @@ import { EditCourseComponent } from './edit-course/edit-course.component';
 import { AceEditorModule } from 'ng2-ace-editor';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { UserNotificationComponent } from './user-notification/user-notification.component';
+import { AddTasksComponent } from './add-tasks/add-tasks.component';
+import { TaskService } from './task.service';
+import { CompletedTaskService } from './completed-task.service';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,7 @@ import { UserNotificationComponent } from './user-notification/user-notification
     EditCourseComponent,
     AddCourseComponent,
     UserNotificationComponent,
+    AddTasksComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,11 +59,12 @@ import { UserNotificationComponent } from './user-notification/user-notification
     FormsModule,
     AceEditorModule
   ],
-  providers: [CompanyService, UserService, SignOut, LocalStorageService, UserCoursesService, CourseService,
+  providers: [CompanyService, UserService, SignOut, LocalStorageService, UserCoursesService, CourseService, TaskService,
   {
   provide : HTTP_INTERCEPTORS,
     useClass : AuthInterceptor,
   multi : true,
+  providers: [CompletedTaskService],
 }],
   bootstrap: [AppComponent]
 })

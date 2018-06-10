@@ -38,7 +38,7 @@
 <h2>My Courses</h2>
 <ul >
   <li *ngFor="let course of userCourses">
- <!-- <a (click)="courseSelect(course.id)">{{course.name}} </a>-->
+ <!-- <a (click)="courseSelect(task.id)">{{task.name}} </a>-->
   <button class="btn newAccount" (click)="courseSelect(course.coursId)">{{course.coursId}} {{course.name}}</button>
   </li>
 </ul>

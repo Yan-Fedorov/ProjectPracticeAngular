@@ -27,7 +27,13 @@ export class CompanyPageComponent implements OnInit {
   selectCourse(id: Guid): void {
     this.localStorage.setLocalCourse(id);
     if (id != null) {
-      this.router.navigate(['/edit-course']);
+      this.router.navigate(['/edit-task']);
+    }
+  }
+  selectCourseAndAddTasks(id: Guid): void {
+    this.localStorage.setLocalCourse(id);
+    if (id != null) {
+      this.router.navigate(['/add-task']);
     }
   }
 }

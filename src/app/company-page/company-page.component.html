@@ -55,8 +55,16 @@
   <table class="table table-striped coursesItem">
     <ul >
       <li *ngFor="let course of courses">
-        <!-- <a (click)="courseSelect(course.id)">{{course.name}} </a>-->
-        <button class="btn newAccount" (click)="selectCourse(course.id)">{{course.name}}</button>
+        <!-- <a (click)="courseSelect(task.id)">{{task.name}} </a>-->
+        <button class="btn newAccount" (click)="selectCourse(course.id)">Редактировать курс - {{course.name}}</button>
+      </li>
+    </ul>
+  </table>
+  <table class="table table-striped coursesItem">
+    <ul >
+      <li *ngFor="let course of courses">
+        <!-- <a (click)="courseSelect(task.id)">{{task.name}} </a>-->
+        <button class="btn newAccount" (click)="selectCourseAndAddTasks(course.id)">Выбрать курс для добавления в него задания - {{course.name}}</button>
       </li>
     </ul>
   </table>

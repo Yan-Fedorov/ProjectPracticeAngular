@@ -33,7 +33,7 @@ export class AddCourseComponent implements OnInit {
 
   addCourseInfo(): void {
     const course = new Course(this.nameOfCourse, this.startTime, this.endTime, this.vacancy, this.peopleLimit);
-    this.courseService.addItem(course).subscribe(x => {
+    this.courseService.addItemToCourse(course).subscribe(x => {
       console.log(x);
       this.course = x;
     });

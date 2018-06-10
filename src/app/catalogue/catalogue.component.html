@@ -64,9 +64,9 @@
   <h2>My Courses</h2>
   <ul >
     <li>
-    <li *ngFor="let course of courses"> <!--(click)="courseSelect(course.id)"-->
-    <!--<a >{{course.name}}</a>
-    <a (click)="this.addCourse(course.id)" >Enroll for a course</a> -->
+    <li *ngFor="let course of courses"> <!--(click)="courseSelect(task.id)"-->
+    <!--<a >{{task.name}}</a>
+    <a (click)="this.addCourse(task.id)" >Enroll for a task</a> -->
     <button type="submit" class="btn newAccount" id="register" (click)="this.addCourse(course.id)">{{course.name}} - Enroll for a course</button>
     </li>
   </ul>

@@ -16,6 +16,7 @@ import {CompanyPageComponent} from './company-page/company-page.component';
 import {EditCourseComponent} from './edit-course/edit-course.component';
 import {AddCourseComponent} from './add-course/add-course.component';
 import {UserNotificationComponent} from './user-notification/user-notification.component';
+import {AddTasksComponent} from './add-tasks/add-tasks.component';
 
 const routes: Routes = [
   {path: 'registration', component: RegistrationComponent},
@@ -30,9 +31,10 @@ const routes: Routes = [
   {path: 'companyLogin', component: CompanyLoginComponent},
   {path: 'task', component: TaskComponent},
   {path: 'company-page', component: CompanyPageComponent},
-  {path: 'edit-course', component: EditCourseComponent},
+  {path: 'edit-task', component: EditCourseComponent},
   {path: 'add-course', component: AddCourseComponent},
   {path: 'user-notification', component: UserNotificationComponent},
+  {path: 'add-task', component: AddTasksComponent},
   {path: 'companyRegistration', component: CompanyRegistrationComponent}];
 
 @NgModule({

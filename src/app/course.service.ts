@@ -16,7 +16,7 @@ export class CourseService {
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Auth': 'False'})
     };
-    return this.http.get<Course[]>('http://localhost:7505/api/course', httpOptions);
+    return this.http.get<Course[]>('http://localhost:7505/api/task', httpOptions);
   }
 
   getItem(id: Guid): Observable<Course> {
@@ -36,9 +36,15 @@ export class CourseService {
 
   addItem(item: Course): Observable<Course> {
     const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Auth': 'False'})
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Auth': 'True'})
     };
     return this.http.post<Course>(`http://localhost:7505/api/course`, item, httpOptions);
+  }
+  addItemToCourse(item: Course): Observable<Course> {
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Auth': 'True'})
+    };
+    return this.http.post<Course>(`http://localhost:7505/api/course/addToCompany`, item, httpOptions);
   }
 
   deleteItem(id: Guid): Observable<any> {

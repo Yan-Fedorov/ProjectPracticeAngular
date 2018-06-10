@@ -55,7 +55,7 @@ export class UserService {
     vm.email = user.email;
   }
 
-  /*addCourse(user: User, course: Course) {
+  /*addCourse(user: User, task: Course) {
     user.Courses.
   }*/
 

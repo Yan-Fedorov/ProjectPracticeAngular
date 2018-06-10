@@ -6,4 +6,11 @@ export class Task {
   public points: number;
   public answers: string;
   public name: string;
+  constructor(name: string, answers: string, points: number, info: string) {
+    this.name = name;
+    this.answers = answers;
+    this.points = points;
+    this.info = info;
+
+  }
 }
